@@ -1,4 +1,4 @@
-# AirBNB-Clone
+# Airbnb-Clone
 Airbnb Clone using Next.js 13, React, Tailwind, Prisma, MongoDB &amp; NextAuth, I've created a full-stack app offering features like User Authentication, Property Listing, Search, and Booking.
 
 This application is a full-stack project and leverages the power of various modern technologies in its implementation.
