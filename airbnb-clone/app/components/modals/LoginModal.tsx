@@ -21,6 +21,7 @@ import { toast } from 'react-hot-toast';
 import Button from '../Button';
 import { useRouter } from 'next/navigation';
 
+
 const LoginModal = () => {
     const router = useRouter();
     const registerModal = useRegisterModal();
@@ -97,13 +98,13 @@ const LoginModal = () => {
                 outline
                 label="Continue with Google"
                 icon={FcGoogle}
-                onClick={() => {}}
+                onClick={() => signIn('google')}
             />
              <Button
                 outline
                 label="Continue with GitHub"
                 icon={AiFillGithub}
-                onClick={() => {}}
+                onClick={() => signIn('github')}
             />
             <div
                 className="
@@ -115,7 +116,7 @@ const LoginModal = () => {
             >
                 <div className="justify-center flex flex-row items-center gap-2">
                     <div>
-                        Already have an account?
+                        Don't have an account?
                     </div>
                     <div
                         onClick={registerModal.onClose}
@@ -125,7 +126,7 @@ const LoginModal = () => {
                             hover:underline
                         "
                     >
-                        Log in
+                        Register Here
                     </div>
                 </div>
             </div>
