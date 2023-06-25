@@ -99,6 +99,7 @@ const RentModal = () => {
             rentModal.onClose();
         })
         .catch(() => {
+            console.error(errors);
             toast.error('Something went wrong');
         }).finally(() => {
             setIsLoading(false);
