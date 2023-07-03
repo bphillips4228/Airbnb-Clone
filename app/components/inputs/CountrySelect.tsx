@@ -11,12 +11,12 @@ export type CountrySelectValue = {
     value: string
 }
 
-interface ectProps {
+interface CountrySelectProps {
     value?: CountrySelectValue;
     onChange: (value: CountrySelectValue) => void;
 }
 
-const ect: React.FC<ectProps> = ({
+const CountrySelect: React.FC<CountrySelectProps> = ({
     value,
     onChange
 }) => {
@@ -62,4 +62,4 @@ const ect: React.FC<ectProps> = ({
     );
 }
  
-export default ect;
+export default CountrySelect;
