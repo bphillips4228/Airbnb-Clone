@@ -82,6 +82,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
             setIsLoading(false);
         })
     }, [
+        currentUser,
         totalPrice,
         dateRange,
         listing?.id,
