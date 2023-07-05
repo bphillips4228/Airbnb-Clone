@@ -11,26 +11,27 @@ import { toast } from "react-hot-toast";
 import ListingCard from "../components/listings/ListingCard";
 
 interface PropertiesClientProps {
-    listings: SafeListing[];
-    currentUser?: SafeUser | null;
+    listings: SafeListing[],
+    currentUser?: SafeUser | null,
 }
 
 const PropertiesClient: React.FC<PropertiesClientProps> = ({
     listings,
     currentUser
-}) => {
-    const router = useRouter();
-    const [deletingId, setDeletingId] = useState('');
-
-    const onCancel = useCallback((id: string) => {
-        setDeletingId(id);
-        axios.delete(`api/listings/${id}`)
+    }) => {
+        const router = useRouter();
+        const [deletingId, setDeletingId] = useState('');
+  
+        const onDelete = useCallback((id: string) => {
+            setDeletingId(id);
+            
+            axios.delete(`/api/listings/${id}`)
         .then(() => {
             toast.success('Listing deleted');
             router.refresh();
         })
         .catch((error) => {
-            toast.error(error?.response?.data?.error);
+            toast.error("Something went wrong.");
         })
         .finally(() => {
             setDeletingId('');
@@ -61,9 +62,9 @@ const PropertiesClient: React.FC<PropertiesClientProps> = ({
                         key={listing.id}
                         data={listing}
                         actionId={listing.id}
-                        onAction={onCancel}
+                        onAction={onDelete}
                         disabled={deletingId == listing.id}
-                        actionLabel="Delete property listing"
+                        actionLabel="Delete property"
                         currentUser={currentUser}
                     />
                 ))}

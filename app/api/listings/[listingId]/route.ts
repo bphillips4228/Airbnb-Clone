@@ -19,7 +19,9 @@ export async function DELETE(
 
     const { listingId } = params;
 
-    if (!listingId || typeof listingId != 'string') {
+    console.log(listingId)
+
+    if (!listingId || typeof listingId !== 'string') {
         throw new Error('Invalid ID');
     }
 
